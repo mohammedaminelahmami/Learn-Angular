@@ -1,0 +1,31 @@
+<form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+  <label for="username">Username</label>
+  <input
+    type="text"
+    name="username"
+    id="username"
+    formControlName="username"
+  /><br />
+  <span
+    *ngIf="username && username.invalid && username.touched"
+    style="color: red"
+    >Username is not valid !</span
+  >
+  <br />
+
+  <label for="password">Password</label>
+  <input
+    type="password"
+    name="password"
+    id="password"
+    formControlName="password"
+  /><br />
+  <span
+    *ngIf="password && password.invalid && password.touched"
+    style="color: red"
+    >Password is not valid !</span
+  >
+  <br />
+
+  <button type="submit">Login</button>
+</form>
